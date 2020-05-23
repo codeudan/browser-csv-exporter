@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./browser-csv-exporter.min.js"></script>
+</head>
+
+<body>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        fileName: 'example-1',
+        columns: [{
+          title: 'Name',
+          key: 'name'
+        }, {
+          title: 'Age',
+          key: 'age'
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-1">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        fileName: 'example-2',
+        columns: [{
+          title: 'name',
+        }, {
+          title: 'age',
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-2">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+          key: 'name'
+        }, {
+          title: 'Age',
+          key: 'age',
+          formatter: function(age) {
+            return age + 10;
+          }
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-3">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+        }, {
+          title: 'Age'
+        }],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-4">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+        }, {
+          title: 'Age',
+          formatter: function(age) {
+            return age + 10;
+          }
+        }],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-5">Export</a>
+  </p>
+  <p>
+    <pre>
+       var exporter = new CSVExporter({
+        columns: ['Name', 'Age'],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-6">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        columns: ['姓名', '年龄'],
+        data: [
+          ['姓名1', 21],
+          ['姓名2', 23]
+        ]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-7">Export</a>
+  </p>
+  <p>
+    <pre>
+      var exporter = new CSVExporter({
+        columns: [",姓名'", '年龄'],
+        data: [
+          ['姓名,1"', 21],
+          ['姓名2', 23]
+        ]
+      });
+      exporter.export();
+    </pre>
+    <a href="#" id="exmaple-8">Export</a>
+  </p>
+  <script>
+  window.onload = function() {
+    document.querySelectorAll('#exmaple-1')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        fileName: 'example-1',
+        columns: [{
+          title: 'Name',
+          key: 'name'
+        }, {
+          title: 'Age',
+          key: 'age'
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-2')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        fileName: 'example-2',
+        columns: [{
+          title: 'name',
+        }, {
+          title: 'age',
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-3')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+          key: 'name'
+        }, {
+          title: 'Age',
+          key: 'age',
+          formatter: function(age) {
+            return age + 10;
+          }
+        }],
+        data: [{
+          name: 'A',
+          age: 21
+        }, {
+          name: 'B',
+          age: 23
+        }]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-4')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+        }, {
+          title: 'Age'
+        }],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-5')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: [{
+          title: 'Name',
+        }, {
+          title: 'Age',
+          formatter: function(age) {
+            return age + 10;
+          }
+        }],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-6')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: ['Name', 'Age'],
+        data: [
+          ['A', 21],
+          ['B', 23]
+        ]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-7')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: ['姓名', '年龄'],
+        data: [
+          ['姓名1', 21],
+          ['姓名2', 23]
+        ]
+      });
+      exporter.export();
+    });
+    document.querySelectorAll('#exmaple-8')[0].addEventListener('click', function() {
+      var exporter = new CSVExporter({
+        columns: [",姓名'", '年龄'],
+        data: [
+          ['姓名,1"', 21],
+          ['姓名2', 23]
+        ]
+      });
+      exporter.export();
+    });
+  }
+
+  </script>
+</body>
+
+</html>

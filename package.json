@@ -1,0 +1,24 @@
+{
+  "description": "A lib for export JSON as CSV file in browser",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "homepage": "https://github.com/codeudan/browser-csv-exporter#readme",
+  "license": "MIT",
+  "main": "browser-csv-exporter.min.js",
+  "name": "browser-csv-exporter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeudan/browser-csv-exporter.git"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test": "jest"
+  },
+  "version": "2.0.2"
+}
